@@ -1,0 +1,54 @@
+body{
+	width:410px;
+	height:450px;
+	font-family: '微軟正黑體','文泉驛微米黑', 'LiHei Pro', sans-serif;
+	background-color: #FFF;
+	border:#000 3px solid;
+}
+
+#Name{ /* 姓名的div */
+	margin:70px 0 0 20px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+#Name input{
+	margin-left: 55px;
+	margin-top: 5px;
+	border-bottom: #837E7C 3px solid;
+	border-top: #FFF 0px dashed;
+	border-left: #FFF 0px dashed;
+	border-right: #FFF 0px dashed;
+	height:30px;
+	width:235px;
+	font-size: 20px;
+}
+
+#Captcha{ /* 驗證碼的div */
+	margin:60px 0 0 20px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+#Captcha img{
+	margin-left: 35px;
+}
+#Captcha input{
+	margin-top: 25px;
+	margin-left: 110px;
+	border-bottom: #837E7C 3px solid;
+	border-top: #FFF 0px dashed;
+	border-left: #FFF 0px dashed;
+	border-right: #FFF 0px dashed;
+	height:30px;
+	width:240px;
+	font-size: 20px;
+}
+
+#Button{ /* 建立按鈕的div */
+	margin:60px 0 0 150px;
+}
+#Button button{
+	font-size: 25px;
+	width:100px;
+	height:40px;
+}
+
