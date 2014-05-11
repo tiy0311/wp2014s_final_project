@@ -1,0 +1,349 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body{
+	margin:0px;
+	border:0px;
+	width:1024px;
+	height:2000px;
+	margin-left:auto;
+	margin-right:auto;
+/*	background:#124533; */
+	font-family: '微軟正黑體','文泉驛微米黑', 'LiHei Pro', sans-serif;
+    font-weight: 200;
+    letter-spacing: -0.02em;
+}
+#wrapper{
+	width:960px;
+	height:2000px;
+	margin-left:auto;
+	margin-right:auto;
+	border:0px;
+	background:#787878;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+li{
+	display:inline-block;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	}
+#header-nav{
+	border-bottom:#58F9C7 5px solid;
+	display:flex;
+}
+
+
+#header-nav li>a{
+	display:inline-block;
+	background:#FFF;
+	color:#4D4D4D;
+	height:109px;
+	width:139px;
+	border-right:solid thin #333;
+}
+#header-nav li>a:hover{
+	background:#242A32;
+	color:#FFF;
+	}
+#header-nav li>a>span{
+	display:inline-block;
+	border-bottom:#58F9C7 5px solid;
+	margin:60px 0 0 48px;
+	padding:0 0 0 10px;
+	width:90px;
+	}
+#header-nav  .header-nav-logo{
+	background:#242A32;
+	width:359px;
+}
+#header-nav .header-nav-search{
+	background:#FFF;
+	width:185px;
+}
+#header-nav li div {
+	height:30px;
+	margin:55px 15px 10px 15px;
+}
+#header-nav li div input{
+	width:100px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+article{
+	height:2000px;
+	background: #242A32;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#Ptitle{ /* 聲明的標題，相關圖片，連署事件簡介，發起人/單位 的整個block */
+	background-color:rgba(255,255,255,0.12);
+	height:330px;
+	width:910px;
+	margin:35px 0 30px 25px; /* 上右下左 */
+	padding:25px 0 30px 35px;
+	display:inline-block;
+}
+#petition-title{ /* 聲明標題 */
+	color:#58F9C7;
+	letter-spacing: 3px;
+	border-bottom:#58F9C7 2px solid;
+	display:inline-block;
+	margin-bottom: 25px;
+}
+#Subtitle{ /* 連署事件簡介，發起時間，發起人/單位 */
+	width:560px;
+}
+#intro{ /* 連署簡介的div */
+	height:180px;
+}
+#petition-intro{ /* 連署事件簡介 */
+	color:#FFF;
+	font-size:18px;
+	letter-spacing: 1px;
+}
+
+#time-and-unit{ /* 發起單位、時間的div */
+	margin-top:5px;
+}
+#unit{ /* 「發起單位」 */
+	color:#242A32;
+	font-size: 15px;
+	letter-spacing:0.3px;
+	display: inline;
+}
+#petition-unit{ /* 發起單位 */
+	color:#FFF;
+	display: inline;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+#petition-issue-date{ /* 發起時間 */
+	color:#FFF;
+	display: inline;
+	float:right;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+
+#Pimage{ /* 連署相關圖片的外框 */
+	/* 圖片置右 */
+	float:left;
+	margin:-230px 0 0 570px;
+
+	/* 外框為白色的長方形，等比例縮放 */
+	max-width: 290px;
+    max-height: 290px;
+    background-color: #FFF;
+    padding:7px;
+}
+#petition-image{ /* 連署相關圖片的來源 */
+    max-width: 270px;
+    max-height: 270px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#Timeline{ /* 時間軸區 */
+	height:200px;
+	width:900px;
+	margin-top: 30px;
+}
+#Timeline img{ /* arrow */
+	margin-left: 30px;
+	margin-top: 10px;
+}
+#Timeline p{ /* 時間軸上的說明文字 */
+	color:#FFF;
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+#timeline-1{
+	margin-left: 70px;
+}
+#timeline-2{
+	margin-left: 140px;
+	margin-top: 20px;
+}
+#timeline-3{
+	margin-left: 100px;
+}
+#timeline-4{
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#Content{ /* 連署聲明的div */
+/*	background: #736F6E; /* 需更改 */
+	height:500px;
+	width:580px;
+	margin:25px 0 25px 25px;
+	padding:20px 20px 20px 40px;
+}
+#content-title{ /* 連署聲明標題 */
+	color:#58F9C7;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+}
+#petition-text{ /* 連署聲明的內容 */
+	color:#FFF;
+	font-size: 17px;
+	line-height:24px; /* 行高 */
+}
+#url, #petition-url{ /* 連署相關網址 */
+	display: inline;
+}
+#petition-url{
+	color:#FFF;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#Progress{ /* 連署進度的div */
+/*	background: #736F6E; /* 需更改 */
+	height:150px;
+	width:580px;
+	margin:30px 0 25px 25px;
+	padding:20px 20px 20px 40px;
+}
+#progress-title{ /* 連署進度標題 */
+	color:#58F9C7;
+	letter-spacing: 1px; /* 字跟字之間的寬度 */
+	margin:0 25px 40px 0;
+	display: inline-block;
+}
+#Progress h5{
+	color:#FFF;
+	font-size: 18px;
+	display: inline;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#PeriodicTask{ /* 右邊的階段性目標 */
+	display:inline;
+	height:845px;
+	width:300px;
+	float:right;
+	border:#58F9C7 5px solid;
+	margin-top: -670px;
+	margin-right: 30px;
+}
+#period-1-block, #period-2-block, #period-3-block, #period-4-block{ /* 四個階段性目標的外框 */
+	height:200px;
+	width:290px;
+	border-bottom:#58F9C7 5px solid;
+}
+#period-1-block, #period-2-block, #period-3-block, #period-4-block h3{ /* 四個階段性目標的連署達幾％ */
+	color:#58F9C7;
+	text-align:right;
+	letter-spacing: 1px;
+}
+#period-1, #period-2, #period-3, #period-4{ /* 四個階段性目標的內容 */
+	color:#FFF;
+	text-align:center;
+	letter-spacing: 1px;
+	margin-top: 25px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#Buttons{ /* 按鈕：我要連署，連署名單 的div */
+/*	background: #736F6E; /* 需更改 */
+	height:150px;
+	width:580px;
+	margin:50px 0 25px 25px;
+	padding:20px 20px 20px 40px;
+}
+#join-petition, #petition-list{
+	border: #FFF 4px solid;
+	display:inline-block;
+	height:65px;
+	width:220px;
+	padding:16px;
+}
+#petition-list{ /* 兩個按鈕間空一點空間 */
+	margin-left: 40px;
+}
+#join-petition a, #petition-list a{
+	color:#FFF;
+	font-size:44px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+#fb-icon{ /* ＦＢ的圖案 */
+	max-width: 8%;
+	float:left;
+	margin: 50px 0 0 150px;
+}
+#share-petition{ /* 分享連署到ＦＢ */
+	border: #FFF 3px solid;
+	display:inline-block;
+	height:43px;
+	width:130px;
+	padding:8px;
+	margin: 50px 0 0 20px;
+}
+#share-petition a{
+	color:#FFF;
+	font-size:26px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#Comments{ /* 我有話要說的div */
+/*	background: #736F6E; /* 需更改 */
+	height:200px;
+	width:700px;
+	margin:90px 0 25px 25px;
+	padding:20px 20px 20px 40px;
+}
+#comment-title{ /* 我有話要說的標題 */
+	color:#58F9C7;
+	letter-spacing: 1px; /* 字跟字之間的寬度 */
+	margin:0 25px 25px 0;
+	display: inline-block;
+}
+#comment-title, textarea{
+	display: inline-block;
+}
+#Comments textarea{ /* 可以留言打字的地方 */
+	width:430px;
+	height: 150px;
+	margin-top: -2em;
+	border:#FFF 1px solid;
+	background-color: #242A32;
+	color:#FFF;
+}
+#Comments input{ /* submit button */
+	margin-left: 380px;
+}
+#Comments form, #pen{
+	display: inline-block;
+}
+#pen{ /* 最下面那隻手 */
+	float:right;
+	margin:-217px -280px 0 0;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+#bottom-line{
+	height:20px;
+	width:960px;
+	background-color: #58F9C7;
+	margin-top: 160px;
+}
