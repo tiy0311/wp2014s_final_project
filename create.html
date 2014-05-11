@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="apply/bootstrap/css/bootstrap.css">
+   <script type="text/javascript" href="apply/bootstrap/js/bootstrap.js"></script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <link rel="stylesheet" href="apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+   <script type="text/javascript" src="apply/scrollIt/scrollIt.js"></script>
+   <link rel="stylesheet" type="text/css" href="create.css">
+   <title>建立連署</title>
+  </head>
+  <body>
+    <div id="container">
+      <form>
+        <div id="Title"> <!--連署標題-->
+          連署標題
+          <input type="text" name="petition-title">
+        </div>
+
+        <div id="Unit"> <!--發起單位-->
+          發起單位
+          <input type="text" name="petition-unit">
+        </div>
+
+        <div id="Category"> <!--類別選單-->
+          類別
+          <select name="category">
+            <option value="politics-and-economics">政治經濟</option>
+            <option value="education-and-culture">教育文化</option>
+            <option value="environment-and-land">環保土地</option>
+            <option value="livelihood">民生</option>
+            <option value="labor">勞工</option>
+            <option value="others">其他</option>
+          </select>
+        </div>
+
+        <div id="Intro"> <!--連署事件簡介-->
+          連署事件簡介
+          <textarea name="petition-intro" rows="10" cols="50"></textarea>
+        </div>
+
+        <div id="Timeline"> <!--連署事件時間軸-->
+          連署重大事件
+          <div class="T">
+            <div class="t">1. <input type="text" name="timeline-1"></div>
+            <div class="t">2. <input type="text" name="timeline-2"></div>
+            <div class="t">3. <input type="text" name="timeline-3"></div>
+            <div class="t">4. <input type="text" name="timeline-4"></div>
+          </div>
+        </div>
+
+        <div id="PeriodicTask"> <!--階段性目標-->
+          階段性目標
+          <div class="P">
+            <div class="p">1. <input type="text" name="period-1"></div>
+            <div class="p">2. <input type="text" name="period-2"></div>
+            <div class="p">3. <input type="text" name="period-3"></div>
+            <div class="p">4. <input type="text" name="period-4"></div>
+          </div>
+        </div>
+
+        <div id="Content"> <!--聲明內容-->
+          聲明內容
+          <textarea name="petition-text" rows="10" cols="50"></textarea>
+        </div>
+
+        <div id="Button" class="btn-group"> <!--建立的按鈕-->
+          <button class="btn">建 立</button>
+        </div>
+      </form>
+    </div>
+  </body>
+ </html>
