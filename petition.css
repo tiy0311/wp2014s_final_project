@@ -10,7 +10,7 @@ body{
 	height:2000px;
 	margin-left:auto;
 	margin-right:auto;
-/*	background:#124533; */
+	background:#124533;
 	font-family: '微軟正黑體','文泉驛微米黑', 'LiHei Pro', sans-serif;
     font-weight: 200;
     letter-spacing: -0.02em;
@@ -270,17 +270,17 @@ article{
 	margin:50px 0 25px 25px;
 	padding:20px 20px 20px 40px;
 }
-#join-petition, #petition-list{
+#Join-petition, #Petition-list{
 	border: #FFF 4px solid;
 	display:inline-block;
 	height:65px;
 	width:220px;
 	padding:16px;
 }
-#petition-list{ /* 兩個按鈕間空一點空間 */
+#Petition-list{ /* 兩個按鈕間空一點空間 */
 	margin-left: 40px;
 }
-#join-petition a, #petition-list a{
+#Join-petition a, #Petition-list a{
 	color:#FFF;
 	font-size:44px;
 	letter-spacing: 1px;
@@ -291,7 +291,7 @@ article{
 	float:left;
 	margin: 50px 0 0 150px;
 }
-#share-petition{ /* 分享連署到ＦＢ */
+#Share-petition{ /* 分享連署到ＦＢ */
 	border: #FFF 3px solid;
 	display:inline-block;
 	height:43px;
@@ -299,7 +299,7 @@ article{
 	padding:8px;
 	margin: 50px 0 0 20px;
 }
-#share-petition a{
+#Share-petition a{
 	color:#FFF;
 	font-size:26px;
 	letter-spacing: 1px;
@@ -350,4 +350,59 @@ article{
 	width:960px;
 	background-color: #58F9C7;
 	margin-top: 160px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+#inline{
+	display:none;
+	width:410px;
+	height:450px;
+	background-color: #FFF;
+	border:#000 3px solid;
+}
+#Name{ /* 姓名的div */
+	margin:70px 0 0 20px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+#Name input{
+	margin-left: 55px;
+	margin-top: 5px;
+	border-bottom: #837E7C 3px solid;
+	border-top: #FFF 0px dashed;
+	border-left: #FFF 0px dashed;
+	border-right: #FFF 0px dashed;
+	height:30px;
+	width:235px;
+	font-size: 20px;
+}
+
+#Captcha{ /* 驗證碼的div */
+	margin:60px 0 0 20px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+#Captcha img{
+	margin-left: 35px;
+}
+#Captcha input{
+	margin-top: 25px;
+	margin-left: 110px;
+	border-bottom: #837E7C 3px solid;
+	border-top: #FFF 0px dashed;
+	border-left: #FFF 0px dashed;
+	border-right: #FFF 0px dashed;
+	height:30px;
+	width:240px;
+	font-size: 20px;
+}
+
+#Join-button{ /* 建立按鈕的div */
+	margin:60px 0 0 150px;
+}
+#Join-button button{
+	font-size: 25px;
+	width:100px;
+	height:40px;
 }

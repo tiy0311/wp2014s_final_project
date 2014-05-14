@@ -8,7 +8,9 @@
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
    <link rel="stylesheet" href="apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
    <script type="text/javascript" src="apply/scrollIt/scrollIt.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="petition.css">
    <title>上書</title>
   </head>
@@ -93,14 +95,14 @@
 					</div>
 				</div>
 				<div id="Buttons"> <!--按鈕：我要連署，連署名單-->
-					<div id="join-petition"> <!--我要連署-->
-						<a href="#">我要連署</a>
+					<div id="Join-petition"> <!--我要連署-->
+						<a href="join.html" data-bb="alert_callback" class="join-petition">我要連署</a>
 					</div>
-					<div id="petition-list"> <!--連署名單-->
+					<div id="Petition-list"> <!--連署名單-->
 						<a href="#">連署名單</a>
 					</div>
 					<img id="fb-icon" src="img/fb_icon_325x325.png" />
-					<div id="share-petition"> <!--分享連署-->
+					<div id="Share-petition"> <!--分享連署-->
 						<a href="#">分享連署</a>
 					</div>
 				</div>
@@ -121,5 +123,70 @@
 		  <footer>
 		  </footer>
 	  </div>
+
+	  <!--按了「我要連署」後，會彈出的表格-->
+	  <div id="inline">
+	  	<form id="join" action="#" method="post" name="join">
+        	<div id="Name"> <!--姓名-->
+          		姓名
+          		<input type="text" name="name" id="name">
+        	</div>
+        	<div id="Captcha"> <!--驗證碼-->
+          		驗證碼
+          		<img src="img/captcha.png" />
+         	 	<input type="text" name="captcha" id="captcha">
+        	</div>
+        	<div id="Join-button" class="btn-group"> <!--建立的按鈕-->
+          		<button class="btn" id="join-button">建 立</button>
+        	</div>
+      	</form>
+	  </div>
+	  <script type="text/javascript">
+		$(document).ready(function() {
+			$(".join-petition").fancybox();
+			$("#join").submit(function() { return false; });
+
+		
+			$("#join-button").on("click", function(){
+				var nameValid  = $("#name").val();
+				var captchaValid    = $("#captcha").val();
+			
+				if(nameValid == false) {
+					$("#name").addClass("error");
+				}
+				else if(nameValid == true){
+					$("#name").removeClass("error");
+				}
+			
+				if(captchaValid == false) {
+					$("#captcha").addClass("error");
+				}
+				else if(captchaValid == true){
+					$("#captcha").removeClass("error");
+				}
+			
+				if(nameValid == true && captchaValid == true) {
+					// if both valid, save the name.
+					// first we hide the submit btn so the user doesnt click twice
+					$("#join-button").replaceWith("<em>建立中</em>");
+				
+					$.ajax({
+						type: 'POST',
+						url: '',
+						data: $("#join").serialize(),
+						success: function(data) {
+							if(data == "true") {
+								$("#join").fadeOut("fast", function(){
+									$(this).before("<p><strong>您已成功連署囉 ^_^! </strong></p>");
+									setTimeout("$.fancybox.close()", 1000);
+								});
+							}
+						}
+					});
+				}
+			});
+		});
+
+	  </script>
   </body>
  </html>
