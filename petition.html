@@ -8,10 +8,10 @@
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
    <link rel="stylesheet" href="apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.js"></script>
    <script type="text/javascript" src="apply/scrollIt/scrollIt.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="petition.css">
+   <link rel="stylesheet" type="text/css" href="petition.css" />
    <title>上書</title>
   </head>
   <body>
@@ -96,7 +96,7 @@
 				</div>
 				<div id="Buttons"> <!--按鈕：我要連署，連署名單-->
 					<div id="Join-petition"> <!--我要連署-->
-						<a href="join.html" data-bb="alert_callback" class="join-petition">我要連署</a>
+						<a href="join.html" data-bb="alert_callback" class="fancybox">我要連署</a>
 					</div>
 					<div id="Petition-list"> <!--連署名單-->
 						<a href="#">連署名單</a>
@@ -112,9 +112,9 @@
 						<h4><textarea name="entry.5.single" rows="10" cols="50"></textarea></h4>
 						<h4><input name="submit" type="submit" value="提 交" /></h4>
 					</form>
-					<div id="pen"> <!--手拿筆的圖-->
-						<img src="img/hand.png" />
-					</div>
+				</div>
+				<div id="pen"> <!--手拿筆的圖-->
+					<img src="img/hand.png" />
 				</div>
 				<div id="bottom-line">
 				</div>
@@ -143,7 +143,7 @@
 	  </div>
 	  <script type="text/javascript">
 		$(document).ready(function() {
-			$(".join-petition").fancybox();
+			$(".fancybox").fancybox();
 			$("#join").submit(function() { return false; });
 
 		
