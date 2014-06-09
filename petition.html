@@ -130,7 +130,7 @@
 	  </div>
 
 	  <!--連署進度的script-->
-	  <script type="text/javascript">
+	  <!--script type="text/javascript">
 		$(document).ready(function(){
 			$('#Progress').goalProgress({
 				goalAmount: 10000,
@@ -140,7 +140,7 @@
 				textAfter: ' 人已連署'
 			});
 		});
-	</script>
+	</script-->
 
 	  <!--按了「我要連署」後，會彈出的表格（div＆script）-->
 	  <div id="inline">
@@ -166,6 +166,7 @@
 
 		
 			$("#join-button").on("click", function(){
+				console.log("now u click on the join btn.");
 				var nameValid  = $("#name").val();
 				var captchaValid    = $("#captcha").val();
 			
