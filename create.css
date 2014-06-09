@@ -5,11 +5,15 @@ body{
 	background-color: #FFF;
 	border:#000 3px solid;
 	border-radius: 8%;
-	font-size: 18px;
+	font-size: 16px;
 	letter-spacing: 1px;
 }
 form{
 	margin:25px 0 0 70px;
+}
+
+textarea{
+	resize: none;
 }
 
 #Title input{
@@ -38,7 +42,7 @@ form{
 #Intro textarea{
 	height:60px;
 	width:200px;
-	margin-left: 62px;
+	margin-left: 67px;
 	margin-top: 10px;
 }
 
@@ -49,7 +53,7 @@ form{
 	margin-top: -25px;
 }
 .t, .p{
-	margin-left: 180px;
+	margin-left: 170px;
 	margin-top: -7px;
 }
 #Timeline input{
@@ -57,7 +61,7 @@ form{
 	border-top: #FFF 0px dashed;
 	border-left: #FFF 0px dashed;
 	border-right: #FFF 0px dashed;
-	width:180px;
+	/*width:180px;*/
 }
 
 #PeriodicTask{
@@ -68,7 +72,7 @@ form{
 	border-top: #FFF 0px dashed;
 	border-left: #FFF 0px dashed;
 	border-right: #FFF 0px dashed;
-	width:180px;
+	/*width:180px;*/
 }
 .P{
 	margin-top: -25px;
