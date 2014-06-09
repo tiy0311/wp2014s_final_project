@@ -271,7 +271,7 @@ article{
 /*	background: #736F6E; /* 需更改 */
 	height:150px;
 	width:900px;
-	margin:30px 0 25px 25px;
+	margin:30px 0 61px 25px;
 	padding:20px 20px 20px 40px;
 }
 #progress-title{ /* 連署進度標題 */
@@ -317,11 +317,9 @@ article{
 /* ---------------------------------------------------------------------------------------------------- */
 
 #Buttons{ /* 按鈕：我要連署，連署名單 的div */
-/*	background: #736F6E; /* 需更改 */
-	height:150px;
-	width:580px;
-	margin:50px 0 25px 25px;
+	width:620px;
 	padding:20px 20px 20px 40px;
+	margin: auto;
 }
 #Join-petition, #Petition-list{
 	border: #FFF 4px solid;
@@ -331,7 +329,7 @@ article{
 	padding:16px;
 }
 #Petition-list{ /* 兩個按鈕間空一點空間 */
-	margin-left: 40px;
+	margin-left: 100px;
 }
 #Join-petition a, #Petition-list a{
 	color:#FFF;
@@ -339,24 +337,30 @@ article{
 	letter-spacing: 1px;
 	text-decoration: none;
 }
-#fb-icon{ /* ＦＢ的圖案 */
-	max-width: 8%;
-	float:left;
-	margin: 50px 0 0 150px;
+
+#FB-Share{
+	height: 100px;
+	margin:30px 20px 0 0;
 }
+
 #Share-petition{ /* 分享連署到ＦＢ */
 	border: #FFF 3px solid;
 	display:inline-block;
 	height:43px;
 	width:130px;
 	padding:8px;
-	margin: 50px 0 0 20px;
+	margin: 100px 0 0 -180px;
 }
 #Share-petition a{
 	color:#FFF;
 	font-size:26px;
 	letter-spacing: 1px;
 	text-decoration: none;
+}
+#fb-icon{ /* ＦＢ的圖案 */
+	max-width: 4.6%;
+	float:left;
+	margin: 100px 0 0 450px;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */
@@ -365,7 +369,7 @@ article{
 /*	background: #736F6E; /* 需更改 */
 	height:200px;
 	width:700px;
-	margin:110px 0 25px 25px;
+	margin:10px 0 25px 25px;
 	padding:20px 20px 20px 40px;
 }
 #comment-title{ /* 我有話要說的標題 */
@@ -391,6 +395,9 @@ article{
 }
 #Comments form, #pen{
 	display: inline-block;
+}
+#Comments form{
+	margin-top: -30px;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */
