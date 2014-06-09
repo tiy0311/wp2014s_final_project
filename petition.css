@@ -99,7 +99,7 @@ article{
 
 #Ptitle{ /* 聲明的標題，相關圖片，連署事件簡介，發起人/單位 的整個block */
 	background-color:rgba(255,255,255,0.12);
-	height:350px;
+	height:360px;
 	width:910px;
 	margin:35px 0 30px 25px; /* 上右下左 */
 	padding:25px 0 30px 35px;
@@ -107,7 +107,7 @@ article{
 }
 #petition-title{ /* 聲明標題 */
 	color:#58F9C7;
-	letter-spacing: 3px;
+	letter-spacing: 5px;
 	border-bottom:#58F9C7 2px solid;
 	display:inline-block;
 	margin-bottom: 25px;
@@ -121,33 +121,33 @@ article{
 #petition-intro{ /* 連署事件簡介 */
 	color:#FFF;
 	font-size:18px;
-	letter-spacing: 1px;
+	letter-spacing: 1.5px;
 	margin-top: 10px;
 }
 
 #time-and-unit{ /* 發起單位、時間的div */
 	margin-top:15px;
 	width: 910px;
+	font-size: 16px;
+	color:#58F9C7;
+	letter-spacing:1px;
 }
 #unit{ /* 「發起單位」 */
-	color:#242A32;
-	font-size: 15px;
-	letter-spacing:0.3px;
 	display: inline;
+	font-size: 16px;
 }
 #petition-unit{ /* 發起單位 */
-	color:#FFF;
 	display: inline;
-	font-size: 16px;
-	letter-spacing: 0.5px;
 }
-#petition-issue-date{ /* 發起時間 */
-	color:#FFF;
+#issue-time{ /* 「發佈時間」 */
+	display: inline;
+	margin-left: 350px;
+	font-size: 16px;
+}
+#petition-issue-date{ /* 發佈時間 */
 	display: inline;
 	float:right;
-	font-size: 16px;
-	letter-spacing: 0.5px;
-	margin-right: 60px;
+	margin-right: 80px;
 }
 
 #Pimage{ /* 連署相關圖片的外框 */
@@ -168,55 +168,15 @@ article{
 
 /* ---------------------------------------------------------------------------------------------------- */
 
-#myTimeline{
-	margin-top: 40px;
-	margin-bottom: 80px;
-}
-
-
-/* old */
-#Timeline{ /* 時間軸區 */
-	height:200px;
-	width:900px;
-	margin-top: 30px;
-}
-#Timeline img{ /* arrow */
-	margin-left: 30px;
-	margin-top: 10px;
-}
-#Timeline p{ /* 時間軸上的說明文字 */
-	color:#FFF;
-	display: inline-block;
-	font-size: 16px;
-	letter-spacing: 0.5px;
-}
-#timeline-1{
-	margin-left: 70px;
-}
-#timeline-2{
-	margin-left: 140px;
-	margin-top: 20px;
-}
-#timeline-3{
-	margin-left: 100px;
-}
-#timeline-4{
-	margin-left: 100px;
-	margin-top: 20px;
-}
-
-/* ---------------------------------------------------------------------------------------------------- */
-
 #Content{ /* 連署聲明的div */
-/*	background: #736F6E; /* 需更改 */
-	height:500px;
-	width:580px;
-	margin:25px 0 25px 25px;
+	height:460px;
+	width:910px;
+	margin:20px 0 25px 25px;
 	padding:20px 20px 20px 40px;
 }
 #content-title{ /* 連署聲明標題 */
 	color:#58F9C7;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	margin-bottom: 30px;
 }
 #petition-text{ /* 連署聲明的內容 */
@@ -233,10 +193,84 @@ article{
 
 /* ---------------------------------------------------------------------------------------------------- */
 
+#myTimeline{
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+
+
+/* old */
+#Timeline{ /* 時間軸區 */
+	height:200px;
+	width:900px;
+	margin-top: 30px;
+}
+#Timeline img{ /* arrow */
+	margin-left: 30px;
+	margin-top: -20px;
+}
+#Timeline p{ /* 時間軸上的說明文字 */
+	color:#FFF;
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+#timeline-1{
+	margin-left: 70px;
+	margin-bottom: 10px;
+}
+#timeline-2{
+	margin-left: 170px;
+	margin-top: 30px;
+}
+#timeline-3{
+	margin-left: 100px;
+}
+#timeline-4{
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+
+#leftend-line{
+	display: inline-block;
+	width: 900px;
+	height: 50px;
+	margin: 5px 0 -20px 130px;
+}
+
+#leftend-line-1{
+	height:50px;
+	width:30px;
+	border-left: 10px solid #fff;
+	margin: 0 0 -10px 0;
+}
+#leftend-line-3{
+	height:50px;
+	width:30px;
+	border-left: 10px solid #fff;
+	margin: -50px 0 0 330px;
+}
+
+#leftend-line-2{
+	height:50px;
+	width:30px;
+	border-left: 10px solid #fff;
+	margin: -100px 0 0 120px;
+}
+#leftend-line-4{
+	height:50px;
+	width:30px;
+	border-left: 10px solid #fff;
+	margin: -50px 0 0 500px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
 #Progress{ /* 連署進度的div */
 /*	background: #736F6E; /* 需更改 */
 	height:150px;
-	width:580px;
+	width:900px;
 	margin:30px 0 25px 25px;
 	padding:20px 20px 20px 40px;
 }
@@ -342,6 +376,7 @@ article{
 }
 #comment-title, textarea{
 	display: inline-block;
+	resize: none;
 }
 #Comments textarea{ /* 可以留言打字的地方 */
 	width:430px;

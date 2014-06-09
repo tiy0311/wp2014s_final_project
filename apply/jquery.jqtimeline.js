@@ -96,15 +96,27 @@
 		var _this = this;
 		var retStr = "";
 		year-=1900;
+				var nLeft = parseInt($t.css('left'));
+				var neighborEvents = _this._getAllNeighborEvents(nLeft);
+				var strToolTip = "" ;
+				for (var i = 0; i < neighborEvents.length; i++) {
+					var $temp = $(neighborEvents[i]);
+					var oData = $temp.data('event');
+						//console.log("oData:");
+						//console.log(oData);
+					strToolTip = strToolTip + '<div class="msg" id="msg_'+oData.id+'">'+ oData.name +'</div>';
+				};
+
 		if(num== 0){
-			retStr='<div class="horizontal-line leftend" style="left:'+_this._current_offset_x+'px">' + 
-						'<div class="year">'+year+'</div>' + 
-						'<div class="month"></div>' + 
-					'</div>';
-		}else if(num%2 == 1){
-			retStr = '<div class="horizontal-line month-line odd-month" style="left:'+_this._current_offset_x+'px"></div>';
-		}else{
-			retStr = '<div class="horizontal-line month-line even-month" style="left:'+_this._current_offset_x+'px"><div class="month">'+aMonths[num]+'</div></div>';
+			if(year == 1 || year == 3){
+				retStr='<div class="horizontal-line leftend-odd" style="left:'+_this._current_offset_x+'px">' + 
+							'<div class="year">'+strToolTip+'</div>' + 
+						'</div>';
+			} else {
+				retStr='<div class="horizontal-line leftend-even" style="left:'+_this._current_offset_x+'px">' + 
+							'<div class="year">'+strToolTip+'</div>' + 
+						'</div>';
+			}
 		}
 		_this._current_offset_x += _this._gap;
 		//console.log("gap:"+_this._gap);
@@ -158,6 +170,7 @@
 		//console.log("leftVal: "+leftVal);
 		var $retHtml = $('<div class="event" id="event_'+e.id+'" style="left:'+leftVal+'px">&nbsp;</div>').data('event',e);
 		$retHtml.data('eventInfo',_this._aEvents[e.id]);
+		/*
 		if(_this.options.click){
 			_this._addEventListner($retHtml,'click');
 		}
@@ -165,6 +178,7 @@
 			_this._addEventListner($retHtml,'mouseover');
 			_this._addEventListner($retHtml,'mouseleave');
 		}
+		*/
 		_this._a$Events[e.id] = $retHtml;
 		return $retHtml;
 	}
