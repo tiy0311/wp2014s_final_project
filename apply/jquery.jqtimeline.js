@@ -195,7 +195,7 @@
 						var oData = $temp.data('event');
 						//console.log("oData:");
 						//console.log(oData);
-						strToolTip = strToolTip + '<div class="msg" id="msg_'+oData.id+'">'+oData.id+'. '+ oData.name +'</div>';
+						strToolTip = strToolTip + '<div class="msg" id="msg_'+oData.id+'">'+ oData.name +'</div>';
 					};
 					_this._showToolTip(nLeft,strToolTip,eObj.id,false);
 				}

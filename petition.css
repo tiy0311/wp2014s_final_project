@@ -122,10 +122,12 @@ article{
 	color:#FFF;
 	font-size:18px;
 	letter-spacing: 1px;
+	margin-top: 10px;
 }
 
 #time-and-unit{ /* 發起單位、時間的div */
-	margin-top:25px;
+	margin-top:15px;
+	width: 910px;
 }
 #unit{ /* 「發起單位」 */
 	color:#242A32;
@@ -145,6 +147,7 @@ article{
 	float:right;
 	font-size: 16px;
 	letter-spacing: 0.5px;
+	margin-right: 60px;
 }
 
 #Pimage{ /* 連署相關圖片的外框 */
@@ -166,8 +169,8 @@ article{
 /* ---------------------------------------------------------------------------------------------------- */
 
 #myTimeline{
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 40px;
+	margin-bottom: 80px;
 }
 
 
