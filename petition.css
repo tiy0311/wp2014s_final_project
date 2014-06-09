@@ -62,14 +62,15 @@ a:hover{
 #header-nav li>a:hover{
 	background:#242A32;
 	color:#FFF;
-	}
+}
 #header-nav li>a>span{
 	display:inline-block;
 	border-bottom:#58F9C7 5px solid;
 	margin:60px 0 0 48px;
 	padding:0 0 0 10px;
 	width:90px;
-	}
+	font-size: 18px;
+}
 #header-nav  .header-nav-logo{
 	background:#242A32;
 	width:359px;
@@ -98,7 +99,7 @@ article{
 
 #Ptitle{ /* 聲明的標題，相關圖片，連署事件簡介，發起人/單位 的整個block */
 	background-color:rgba(255,255,255,0.12);
-	height:330px;
+	height:350px;
 	width:910px;
 	margin:35px 0 30px 25px; /* 上右下左 */
 	padding:25px 0 30px 35px;
@@ -124,7 +125,7 @@ article{
 }
 
 #time-and-unit{ /* 發起單位、時間的div */
-	margin-top:5px;
+	margin-top:25px;
 }
 #unit{ /* 「發起單位」 */
 	color:#242A32;
@@ -164,6 +165,13 @@ article{
 
 /* ---------------------------------------------------------------------------------------------------- */
 
+#myTimeline{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+
+/* old */
 #Timeline{ /* 時間軸區 */
 	height:200px;
 	width:900px;
@@ -245,7 +253,7 @@ article{
 
 #PeriodicTask{ /* 右邊的階段性目標 */
 	display:inline;
-	height:845px;
+	height:925px;
 	width:300px;
 	float:right;
 	border:#58F9C7 5px solid;
@@ -253,13 +261,13 @@ article{
 	margin-right: 30px;
 }
 #period-1-block, #period-2-block, #period-3-block, #period-4-block{ /* 四個階段性目標的外框 */
-	height:200px;
+	height:220px;
 	width:290px;
 	border-bottom:#58F9C7 5px solid;
 }
 #period-1-block, #period-2-block, #period-3-block, #period-4-block h3{ /* 四個階段性目標的連署達幾％ */
 	color:#58F9C7;
-	text-align:right;
+	text-align:center;
 	letter-spacing: 1px;
 }
 #period-1, #period-2, #period-3, #period-4{ /* 四個階段性目標的內容 */
@@ -320,7 +328,7 @@ article{
 /*	background: #736F6E; /* 需更改 */
 	height:200px;
 	width:700px;
-	margin:90px 0 25px 25px;
+	margin:110px 0 25px 25px;
 	padding:20px 20px 20px 40px;
 }
 #comment-title{ /* 我有話要說的標題 */

@@ -10,6 +10,8 @@
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.js"></script>
    <script type="text/javascript" src="apply/scrollIt/scrollIt.js"></script>
+   <script type="text/javascript" src="apply/jquery.jqtimeline.js"></script>
+   <link rel="stylesheet" type="text/css" href="jquery.jqtimeline.css" />
    <link rel="stylesheet" type="text/css" href="petition.css" />
    <title>上書</title>
   </head>
@@ -45,13 +47,15 @@
 		  			</div>
 				</div>
 			</div>
-		  	<div id="Timeline"> <!--時間軸-->
+			<div id="myTimeline">
+			</div>
+		  	<!--div id="Timeline"> <!時間軸>
 		  		<p id="timeline-1">本案環評2003年通過</p>
 		  		<p id="timeline-3">2014年環保署環評大會16日下午審查台13線三義外環道</p>
-		  		<img src="img/arrow.png" /> <!--時間軸的那個軸的圖-->
+		  		<img src="img/arrow.png" /> <!時間軸的那個軸的圖>
 		  		<p id="timeline-2">2006年仍未開發應重新環評</p>
 		  		<p id="timeline-4">2014年數個環開發起組成「石虎保育聯盟」</p>
-			</div>
+			</div-->
 			<div>
 				<div id="Content"> <!--連署聲明整個內容-->
 					<h2 id="content-title">連署聲明</h2> <!--標題「連署聲明」-->
@@ -66,15 +70,17 @@
 					</p> <!--連署聲明的內容-->
 					<!--h5 id="url">相關網址 </h5><p id="petition-url">https://facebook.com/99houlong</p--> <!--相關網址-->
 				</div>
+
 				<div id="Progress"> <!--連署進度-->
-					<h2 id="progress-title">連署進度</h2> <!--標題「連署進度」-->
+					<h2 id="progress-title">連署進度</h2>
 					<h5 id="current-number">6000</h5>
 					<h5> / </h5>
 					<h5 id="target-number">10000</h5>
-					<div class="progress progress-success">
+					<div class="progress progress-success active">
 						<div class="bar" style="width: 60%"></div>
 					</div>
-				</div>
+				</div>				
+
 				<div id="PeriodicTask"> <!--階段性目標-->
 					<div id="period-1-block"> <!--階段性目標1-->
 						<h3>達目標連署人數 30% </h3>
@@ -123,7 +129,20 @@
 		  </footer>
 	  </div>
 
-	  <!--按了「我要連署」後，會彈出的表格-->
+	  <!--連署進度的script-->
+	  <script type="text/javascript">
+		$(document).ready(function(){
+			$('#Progress').goalProgress({
+				goalAmount: 10000,
+				currentAmount: 6000,
+				speed: 2000,
+				textBefore: '',
+				textAfter: ' 人已連署'
+			});
+		});
+	</script>
+
+	  <!--按了「我要連署」後，會彈出的表格（div＆script）-->
 	  <div id="inline">
 	  	<form id="join" action="#" method="post" name="join">
         	<div id="Name"> <!--姓名-->
@@ -187,5 +206,30 @@
 		});
 
 	  </script>
+	  <script type="text/javascript">
+			var ev = [
+				{
+					id : 1,
+					name : "本案環評2003年通過",
+					on : new Date(1901,1,1)
+				},{
+					id : 2,
+					name : "2006年仍未開發應重新環評",
+					on : new Date(1902,1,1)
+				},{
+					id : 3,
+					name : "2006年仍未開發應重新環評",
+					on : new Date(1903,1,1)
+				},{
+					id : 4,
+					name : "2014年數個環開發起組成「石虎保育聯盟」",
+					on : new Date(1904,1,1)
+				}]
+			var tl = $('#myTimeline').jqtimeline({
+				events : ev,
+				numYears:3,
+				startYear:1901,
+			});
+		</script>
   </body>
  </html>
