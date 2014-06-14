@@ -61,7 +61,7 @@
 
         <!--連署目標人數，連署照片上傳-->
         <div id="People"> <!--連署目標人數-->
-          <i class="icon-ok"></i>&nbsp;連署目標人數
+          <i class="icon-ok"></i>&nbsp;目標人數
           <input type="text" name="petition-people" id="petition-people">
         </div>
 
@@ -93,6 +93,7 @@
         var category = document.forms["Form"]["category"].value;
         var intro = document.forms["Form"]["petition-intro"].value;
         var txt = document.forms["Form"]["petition-text"].value;
+        var people = document.forms["Form"]["petition-people"].value;
 
         if (title == null || title == "") {
           alert("請輸入連署標題");
@@ -108,6 +109,9 @@
           return false;
         } else if (txt == null || txt == "") {
           alert("請輸入聲明內容");
+          return false;
+        } else if (people == null || people == "") {
+          alert("請輸入目標人數");
           return false;
         }
         
