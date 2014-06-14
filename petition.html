@@ -10,8 +10,7 @@
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.js"></script>
    <script type="text/javascript" src="apply/scrollIt/scrollIt.js"></script>
-   <script type="text/javascript" src="apply/jquery.jqtimeline.js"></script>
-   <link rel="stylesheet" type="text/css" href="jquery.jqtimeline.css" />
+   <script type="text/javascript" src="apply/reCaptcha.js"></script>
    <link rel="stylesheet" type="text/css" href="petition.css" />
    <title>上書</title>
   </head>
@@ -160,9 +159,10 @@
           		<input type="text" name="name" id="name">
         	</div>
         	<div id="Captcha"> <!--驗證碼-->
-          		驗證碼
-          		<img src="img/captcha.png" />
-         	 	<input type="text" name="captcha" id="captcha">
+          		驗證碼&nbsp;&nbsp;&nbsp;&nbsp;
+          		<!--img src="img/captcha.png" />
+         	 	<input type="text" name="captcha" id="captcha"-->
+         	 	<script type="text/javascript">DrawBotBoot()</script>
         	</div>
         	<div id="Join-button" class="btn-group"> <!--建立的按鈕-->
           		<button class="btn" id="join-button">建 立</button>
