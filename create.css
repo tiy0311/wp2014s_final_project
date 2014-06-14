@@ -46,8 +46,23 @@ textarea{
 	margin-top: 10px;
 }
 
+#People, #Picture{
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+#People input{
+	margin-top: 5px;
+	margin-left: 66px;
+	border-bottom: #837E7C 2px solid;
+	border-top: #FFF 0px dashed;
+	border-left: #FFF 0px dashed;
+	border-right: #FFF 0px dashed;
+}
+
 #Timeline{
-	margin-top: 20px;
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 .T{
 	margin-top: -25px;
