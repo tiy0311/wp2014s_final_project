@@ -38,6 +38,10 @@ window.fbAsyncInit = function () {//facebook init
             IfLoggedInDiv.style.display="none";
             var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
             IfNotLoggedInDiv.style.display="block";
+        } else {
+            FB.logout(function(response){
+                location.reload();  // refresh
+            });
         }
     });
 
@@ -104,7 +108,7 @@ FB.getLoginStatus(function(response) {
     });
 
     $("#logout-btn").click(function(){
-        //alert('You are logging out. Bye!');
+        alert('You are logging out. Bye!');
         FB.logout(function(response){
             location.reload();  // refresh
         });
