@@ -13,10 +13,11 @@ window.fbAsyncInit = function () {//facebook init
         version: 'v2.0'
     });
 
-// define the events when login status changed.
+
+    // define the events when login status changed.
     FB.Event.subscribe('auth.login', function(response) {
 
-        if (response.status=="connected" && response.authResponse){ // if logged in
+        if (response.status=="connected"){ // if logged in
             var IfLoggedInDiv=document.getElementById("if-logged-in");
             IfLoggedInDiv.style.display="block";
             var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
@@ -33,17 +34,17 @@ window.fbAsyncInit = function () {//facebook init
     });
             
     FB.Event.subscribe('auth.logout', function(response) {
-        if (response.status!="connected" && response.authResponse){ // if logged out
+        if (response.status!="connected"){ // if logged out
             var IfLoggedInDiv=document.getElementById("if-logged-in");
             IfLoggedInDiv.style.display="none";
             var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
             IfNotLoggedInDiv.style.display="block";
-        } else {
             FB.logout(function(response){
                 location.reload();  // refresh
             });
         }
     });
+
 
 /*
 FB.getLoginStatus(function(response) {
@@ -92,6 +93,7 @@ FB.getLoginStatus(function(response) {
   }
  });
 */
+
     $("#login-btn").click(function(){   
         alert("click on login-btn"); 
         FB.login(function(response) {
