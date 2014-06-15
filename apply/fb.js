@@ -23,13 +23,19 @@ window.fbAsyncInit = function () {//facebook init
             var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
             IfNotLoggedInDiv.style.display="none";
 
+            FB.api('/me', function(response) {
+                //    console.log('Good to see you, ' + response.name + '.');
+                    var UserName = document.getElementById("user_name");
+                    UserName.innerHTML=response.name;
+            });
+
             // get access token
             ACCESS_TOKEN=response.authResponse.accessToken;
             //console.log('ACCESS_TOKEN: '+ACCESS_TOKEN);
 
             // get user id
             userid=response.authResponse.userID;
-            //console.log('userid: '+userid);
+            console.log('userid: '+userid);
         }
     });
             
@@ -104,9 +110,11 @@ FB.getLoginStatus(function(response) {
                 var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
                 IfNotLoggedInDiv.style.display="none";
                 
-                //FB.api('/me', function(response) {
-                //    console.log('Good to see you, ' + response.name + '.'); 
-                //});
+                FB.api('/me', function(response) {
+                //    console.log('Good to see you, ' + response.name + '.');
+                    var UserName = document.getElementById("user_name");
+                    UserName.innerHTML=response.name;
+                });
                 
             } else {
                 console.log('User cancelled login or did not fully authorize.');
