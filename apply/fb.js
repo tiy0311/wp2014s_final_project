@@ -25,11 +25,11 @@ window.fbAsyncInit = function () {//facebook init
 
             // get access token
             ACCESS_TOKEN=response.authResponse.accessToken;
-            console.log('ACCESS_TOKEN: '+ACCESS_TOKEN);
+            //console.log('ACCESS_TOKEN: '+ACCESS_TOKEN);
 
             // get user id
             userid=response.authResponse.userID;
-            console.log('userid: '+userid);
+            //console.log('userid: '+userid);
         }
     });
             
@@ -97,16 +97,16 @@ FB.getLoginStatus(function(response) {
     $("#login-btn").click(function(){   
         //alert("click on login-btn"); 
         FB.login(function(response) {
-            console.log(response);
+            //console.log(response);
             if (response.status == "connected") {
                 var IfLoggedInDiv=document.getElementById("if-logged-in");
                 IfLoggedInDiv.style.display="block";
                 var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
                 IfNotLoggedInDiv.style.display="none";
                 
-                FB.api('/me', function(response) {
-                    console.log('Good to see you, ' + response.name + '.'); 
-                });
+                //FB.api('/me', function(response) {
+                //    console.log('Good to see you, ' + response.name + '.'); 
+                //});
                 
             } else {
                 console.log('User cancelled login or did not fully authorize.');
