@@ -98,7 +98,11 @@ FB.getLoginStatus(function(response) {
         alert("click on login-btn"); 
         FB.login(function(response) {
             console.log(response);
-            if (response.authResponse) {
+            if (response.status == "connected") {
+                var IfLoggedInDiv=document.getElementById("if-logged-in");
+                IfLoggedInDiv.style.display="block";
+                var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
+                IfNotLoggedInDiv.style.display="none";
                 
                 FB.api('/me', function(response) {
                     console.log('Good to see you, ' + response.name + '.'); 
