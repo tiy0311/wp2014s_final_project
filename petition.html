@@ -6,6 +6,7 @@
    <link rel="stylesheet" type="text/css" href="apply/bootstrap/css/bootstrap.css">
    <script type="text/javascript" href="apply/bootstrap/js/bootstrap.js"></script>
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
    <link rel="stylesheet" href="apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.js"></script>
@@ -21,7 +22,8 @@
 				  <li><a href="#"><span>聯絡我們</span></a></li>
 				  <li class="header-nav-logo"><img src="img/logo.gif" /></li>
 				  <li><a href="#"><span>查看連署</span></a></li>
-				  <li><a href="#"><span>登入/註冊</span></a></li>
+				  <li id="if-not-logged-in"><a href="#"><span id="login-btn">登入/註冊</span></a></li>
+				  <li id="if-logged-in" style="display:none"><a href=""><span id="logout-btn">登出</span></a></li>
 				  <li class="header-nav-search">
 					 <div class="input-append">
 					   <input  id="appendedInputButtons" type="search">
@@ -110,7 +112,7 @@
 					<div id="Join-petition"> <!--我要連署-->
 						<a href="#inline" data-bb="alert_callback" class="join-petition">我要連署</a>
 					</div>
-					<div id="Petition-list"> <!--連署名單-->
+					<div id="Petition-list"> <!--連署名單 name_list -->
 						<a href="#">連署名單</a>
 					</div>
 				</div>
@@ -217,30 +219,10 @@
 		});
 
 	  </script>
-	  <!--script type="text/javascript">
-			var ev = [
-				{
-					id : 1,
-					name : "本案環評2003年通過",
-					on : new Date(1901,1,1)
-				},{
-					id : 2,
-					name : "2006年仍未開發應重新環評",
-					on : new Date(1902,1,1)
-				},{
-					id : 3,
-					name : "2014年環保署環評大會審查台13線三義外環道",
-					on : new Date(1903,1,1)
-				},{
-					id : 4,
-					name : "2014年數個環開發起組成「石虎保育聯盟」",
-					on : new Date(1904,1,1)
-				}]
-			var tl = $('#myTimeline').jqtimeline({
-				events : ev,
-				numYears:3,
-				startYear:1901,
-			});
-		</script-->
+	<script type="text/javascript" src="apply/fb.js"></script>
+	<!--script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src='https://www.parsecdn.com/js/parse-1.2.18.min.js'></script>  
+	<script src='./js/vendors/doT.min.js'></script>
+	<script src='apply/app.js'></script-->
   </body>
  </html>
