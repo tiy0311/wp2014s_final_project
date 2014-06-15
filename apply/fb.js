@@ -95,7 +95,7 @@ FB.getLoginStatus(function(response) {
 */
 
     $("#login-btn").click(function(){   
-        alert("click on login-btn"); 
+        //alert("click on login-btn"); 
         FB.login(function(response) {
             console.log(response);
             if (response.status == "connected") {
@@ -115,7 +115,7 @@ FB.getLoginStatus(function(response) {
     });
 
     $("#logout-btn").click(function(){
-        alert('You are logging out. Bye!');
+        //alert('You are logging out. Bye!');
         FB.logout(function(response){
             location.reload();  // refresh
         });
