@@ -98,11 +98,11 @@ FB.getLoginStatus(function(response) {
         alert("click on login-btn"); 
         FB.login(function(response) {
             if (response.authResponse) {
-                /*
+                
                 FB.api('/me', function(response) {
                     console.log('Good to see you, ' + response.name + '.'); 
                 });
-                */
+                
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
