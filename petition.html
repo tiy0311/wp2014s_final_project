@@ -3,10 +3,10 @@
  <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" href="apply/bootstrap/css/bootstrap.css">
-   <script type="text/javascript" href="apply/bootstrap/js/bootstrap.js"></script>
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
+   <link href="apply/bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+   <script src="apply/bootstrap-3.0.0/assets/js/jquery.js"></script>
+   <script src="apply/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.js"></script>
@@ -18,20 +18,30 @@
   <body>
 	  <div id="wrapper">
 		  <header>
-			  <ul id="header-nav">
-				  <li><a href="#"><span>聯絡我們</span></a></li>
-				  <li class="header-nav-logo"><img src="img/logo.gif" /></li>
-				  <li><a href="#"><span>查看連署</span></a></li>
-				  <li id="if-not-logged-in"><a href="#"><span id="login-btn">登入/註冊</span></a></li>
-				  <li id="if-logged-in" style="display:none"><a href=""><span id="logout-btn"><p id="user_name"></p>登出</span></a></li>
-				  <li class="header-nav-search">
-					 <div class="input-append">
-					   <input  id="appendedInputButtons" type="search">
-					   <button class="btn btn-inverse" type="button"><i class="icon-search icon-white"></i></button>
-					 <div>
-				  </li>
-			  </ul>
+			  <ul>
+				<li><img src="img/logo.png" width="278px"></li>
+				<img src="img/listyle.png">
+				<li><a href="#">關於我們</a></li>
+				<img src="img/listyle.png">
+				<li><a href="#">查看連署</a></li>
+				<img src="img/listyle.png">
+				<li id="if-not-logged-in"><a href="#" id="login-btn">登入/註冊</a></li>
+				<li id="if-logged-in" style="display:none"><a href="#" id="logout-btn">登出</a></li>
+				<img src="img/listyle.png">
+				<li><a href="#">搜尋連署</a></li>
+				<li>
+					<div class="input-group col-lg-3 search-bar-pos">
+				    	<input type="text" class="form-control">
+				    	<span class="input-group-btn">
+				        	<button class="btn btn-custom" type="button"><span class="glyphicon glyphicon-search white"></span></button>
+				      	</span>
+	    			</div>
+				</li>
+				<li>
+				</li>
+			</ul>
 		  </header>
+
 		  <article>
 		  	<div id="Ptitle"> <!--聲明的標題，相關圖片-->
 		  		<h1 id="petition-title">搶救石虎</h1> <!--聲明的標題-->
@@ -83,10 +93,12 @@
 				<div id="Progress"> <!--連署進度-->
 					<h2 id="progress-title">連署進度</h2>
 					<h5 id="current-number">6000</h5>
-					<h5> / </h5>
+					<h5>&nbsp;&nbsp;/&nbsp;&nbsp;</h5>
 					<h5 id="target-number">10000</h5>
-					<div class="progress progress-success active">
-						<div class="bar" style="width: 60%"></div>
+					<h5>&nbsp;&nbsp;份</h5>
+					<div class="progress">
+  						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+  						</div>
 					</div>
 				</div>				
 
@@ -117,10 +129,13 @@
 					</div>
 				</div>
 				<div id="FB-Share">
-					<div id="Share-petition"> <!--分享連署-->
+					<!--div id="Share-petition"> <!--分享連署
 						<a href="#">分享連署</a>
 					</div>
-					<img id="fb-icon" src="img/fb_icon_325x325.png" />
+					<img id="fb-icon" src="img/fb_icon_325x325.png" /-->
+					<div id="Share-petition">
+						<div class="fb-share-button" data-href="http://tiy0311.github.io/wp2014s_final_project/petition.html" data-type="button_count"></div>
+					</div>
 				</div>
 				<div id="Comments"> <!--我有話要說-->
 					<form action="https://docs.google.com/spreadsheet/formResponse?formkey=dDZ3dGNNLVFBTjR4bktTNGhQVEFfa3c6MA&amp;ifq" method="POST">
@@ -219,6 +234,15 @@
 		});
 
 	  </script>
+	  <script>
+	  (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+  		if (d.getElementById(id)) return;
+  		js = d.createElement(s); js.id = id;
+  		js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=322780024547098&version=v2.0";
+  		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 	<script type="text/javascript" src="apply/fb.js"></script>
 	<!--script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src='https://www.parsecdn.com/js/parse-1.2.18.min.js'></script>  
