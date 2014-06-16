@@ -13,6 +13,9 @@ window.fbAsyncInit = function () {//facebook init
         version: 'v2.0'
     });
 
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
 
     // define the events when login status changed.
     FB.Event.subscribe('auth.login', function(response) {
