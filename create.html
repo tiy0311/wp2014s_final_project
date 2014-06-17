@@ -3,8 +3,9 @@
  <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" href="apply/bootstrap/css/bootstrap.css">
-   <script type="text/javascript" href="apply/bootstrap/js/bootstrap.js"></script>
+   <link href="apply/bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+   <script src="apply/bootstrap-3.0.0/assets/js/jquery.js"></script>
+   <script src="apply/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
    <link rel="stylesheet" href="apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -17,17 +18,17 @@
       <!--form裡的action="URL" : where to send the form-data when a form is submitted-->
       <form name="Form" action="" onsubmit="return validateForm()" method="post">
         <div id="Title"> <!--連署標題-->
-          <i class="icon-ok"></i>&nbsp;連署標題
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;連署標題
           <input type="text" name="petition-title" id="petition-title">
         </div>
 
         <div id="Unit"> <!--發起單位-->
-          <i class="icon-ok"></i>&nbsp;發起單位
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;發起單位
           <input type="text" name="petition-unit" id="petition-unit">
         </div>
 
         <div id="Category"> <!--類別選單-->
-          <i class="icon-ok"></i>&nbsp;類別
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;類別
           <select name="category" id="category">
             <option value="default">請選擇</option>
             <option value="politics-and-economics">政治經濟</option>
@@ -39,8 +40,14 @@
           </select>
         </div>
 
+        <!--連署目標人數，連署照片上傳-->
+        <div id="People"> <!--連署目標人數 target-->
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;目標人數
+          <input type="text" name="petition-people" id="petition-people">
+        </div>
+
         <div id="Intro"> <!--連署事件簡介-->
-          <i class="icon-ok"></i>&nbsp;連署事件簡介
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;連署事件簡介
           <textarea name="petition-intro" id="petition-intro" rows="10" cols="50"></textarea>
         </div>
 
@@ -55,18 +62,12 @@
         </div-->
 
         <div id="Content"> <!--聲明內容-->
-          <i class="icon-ok"></i>&nbsp;聲明內容
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;聲明內容
           <textarea name="petition-text" id="petition-text" rows="10" cols="50"></textarea>
         </div>
 
-        <!--連署目標人數，連署照片上傳-->
-        <div id="People"> <!--連署目標人數 target-->
-          <i class="icon-ok"></i>&nbsp;目標人數
-          <input type="text" name="petition-people" id="petition-people">
-        </div>
-
         <div id="Picture"> <!--連署圖片上傳-->
-          <i class="icon-ok"></i>&nbsp;連署圖片
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;連署圖片
         </div>
 
         <div id="Timeline"> <!--連署事件時間軸-->
