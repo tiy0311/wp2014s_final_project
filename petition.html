@@ -11,6 +11,9 @@
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
    <script type="text/javascript" src="apply/fancybox/source/jquery.fancybox.js"></script>
    <script type="text/javascript" src="apply/scrollIt/scrollIt.js"></script>
+   	<script src='https://www.parsecdn.com/js/parse-1.2.18.min.js'></script>
+	<script type="text/javascript" src="apply/fb2.js"></script>
+	<!--script type="text/javascript" src="apply/search.js"></script-->
    <script type="text/javascript" src="apply/reCaptcha.js"></script>
    <link rel="stylesheet" type="text/css" href="petition.css" />
    <title>上書</title>
@@ -19,11 +22,11 @@
 	  <div id="wrapper">
 		  <header>
 			  <ul>
-				<li><a href="http://divaclin.github.io/wp2014s_final/index.html"><img src="img/logo.png" width="278px"></a></li>
+				<li><a href="index.html"><img src="img/logo.png" width="278px"></a></li>
 				<img src="img/listyle.png">
 				<li><a href="#">關於我們</a></li>
 				<img src="img/listyle.png">
-				<li><a href="#">查看連署</a></li>
+				<li><a href="category.html">查看連署</a></li>
 				<img src="img/listyle.png">
 				<li id="if-not-logged-in"><a href="#" id="login-btn">登入/註冊</a></li>
 				<li id="if-logged-in" style="display:none"><a href="#" id="logout-btn">登出</a></li>
@@ -31,9 +34,9 @@
 				<li><a href="#">搜尋連署</a></li>
 				<li>
 					<div class="input-group col-lg-3 search-bar-pos">
-				    	<input type="text" class="form-control">
+				    	<input type="text" class="form-control" id="search_text">
 				    	<span class="input-group-btn">
-				        	<button class="btn btn-custom" type="button"><span class="glyphicon glyphicon-search white"></span></button>
+				        	<button class="btn btn-custom" type="button" onClick="search()"><span class="glyphicon glyphicon-search white"></span></button>
 				      	</span>
 	    			</div>
 				</li>
@@ -242,11 +245,7 @@
   		js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=322780024547098&version=v2.0";
   		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<script type="text/javascript" src="apply/fb.js"></script>
-	<!--script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src='https://www.parsecdn.com/js/parse-1.2.18.min.js'></script>  
-	<script src='./js/vendors/doT.min.js'></script>
-	<script src='apply/app.js'></script-->
+	</script>  
+
   </body>
  </html>

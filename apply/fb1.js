@@ -1,83 +1,56 @@
 // 初始化SDK (Application ID),(JavaScript Key)
 Parse.initialize("LQXW7t4hRmWf8Lw4dLcPaNRDQbMoe24rctZE7G0z", "qVd2E2OB786ORKQ83hWg6OQRs17YLIPf9H0MdUTP");
 
-var user_email;
-var show_div;
-
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
-    console.log('statusChangeCallback:');
+    console.log('statusChangeCallback');
     console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
-        console.log("1");
       // Logged into your app and Facebook.
-
-            // show login 
-            var IfLoggedInDiv=document.getElementById("if-logged-in");
-            IfLoggedInDiv.style.display="inline-block";
-            var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
-            IfNotLoggedInDiv.style.display="none";
-
-        /*
         var IfLoggedInDiv=document.getElementById("if-logged-in");
         IfLoggedInDiv.style.display="inline-block";
         var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
         IfNotLoggedInDiv.style.display="none";
-        */
+
                     // get access token
             var ACCESS_TOKEN=response.authResponse.accessToken;
+            //console.log('ACCESS_TOKEN: '+ACCESS_TOKEN);
 
             // get user id
             var userid=response.authResponse.userID;
             console.log('userid: '+userid);
 
-            /*
-            var user_email;
-            FB.api('/me', function(response) {
-                console.log(response);
-                user_email = response.email;
-                console.log(response.email);
-            });
-            console.log("user_email~~~~",user_email);
-            */
-
-            console.log("***user_email,",user_email);
             addNewUser(userid,ACCESS_TOKEN);
-
+      //testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       //document.getElementById('status').innerHTML = 'Please log ' +
       //  'into this app.';
-
-        // show logout
         var IfLoggedInDiv=document.getElementById("if-logged-in");
         IfLoggedInDiv.style.display="none";
         var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
         IfNotLoggedInDiv.style.display="inline-block";
         FB.logout(function(response){
-            window.location.reload();  // refresh
+            location.reload();  // refresh
         });
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       //document.getElementById('status').innerHTML = 'Please log ' +
       //  'into Facebook.';
-
-        // show logout
         var IfLoggedInDiv=document.getElementById("if-logged-in");
         IfLoggedInDiv.style.display="none";
         var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
         IfNotLoggedInDiv.style.display="inline-block";
         FB.logout(function(response){
-            window.location.reload();  // refresh
+            location.reload();  // refresh
         });
     }
   }
-
 
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
@@ -85,8 +58,6 @@ var show_div;
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-      console.log("QQ");
-      console.log(response);
     });
   }
 
@@ -101,69 +72,6 @@ window.fbAsyncInit = function () {//facebook init
         oauth   : true,
         version: 'v2.0'
     });
-/*
-    FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-
-        // show logout
-        var IfLoggedInDiv=document.getElementById("if-logged-in");
-        IfLoggedInDiv.style.display="inline-block";
-        var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
-        IfNotLoggedInDiv.style.display="none";
-
-        // get access token
-        var ACCESS_TOKEN=response.authResponse.accessToken;
-        //console.log('ACCESS_TOKEN: '+ACCESS_TOKEN);
-
-            // get user id
-        var userid=response.authResponse.userID;
-        console.log('userid: '+userid);
-
-        /*
-            var user_email;
-            FB.api('/me', function(response) {
-                console.log(response);
-                user_email = response.email;
-                console.log(response.email);
-            });
-            console.log("user_email~~~~",user_email);
-          
-
-            addNewUser(userid,ACCESS_TOKEN);
-    
-  } else if (response.status === 'not_authorized') {
-    //要求使用者登入，索取publish_actions權限
-    FB.login(function (response) {
-
-        // show logout
-        var IfLoggedInDiv=document.getElementById("if-logged-in");
-        IfLoggedInDiv.style.display="none";
-        var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
-        IfNotLoggedInDiv.style.display="inline-block";
-        if (response.authResponse) { // if user login to your apps right after handle an event
-            window.location.reload();
-        };
-    }, { scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'});
-    
-  } else {
-    //同樣要求使用者登入
-    FB.login(function (response) {
-
-        // show login
-        var IfLoggedInDiv=document.getElementById("if-logged-in");
-        IfLoggedInDiv.style.display="none";
-        var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
-        IfNotLoggedInDiv.style.display="inline-block";
-        if (response.authResponse) {
-            window.location.reload();
-        } else {
-            //alertify.alert('An Error has Occurs,Please Reload your Pages');
-        }
-    });
-  }
- });
-*/
-
 
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
@@ -173,93 +81,65 @@ window.fbAsyncInit = function () {//facebook init
     // define the events when login status changed.
     FB.Event.subscribe('auth.login', function(response) {
 
-
-            // show logout
-            var IfLoggedInDiv=document.getElementById("if-logged-in");
-            IfLoggedInDiv.style.display="inline-block";
-            var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
-            IfNotLoggedInDiv.style.display="none";
-
-/*
         if (response.status=="connected"){ // if logged in
             var IfLoggedInDiv=document.getElementById("if-logged-in");
             IfLoggedInDiv.style.display="inline-block";
             var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
             IfNotLoggedInDiv.style.display="none";
 
-            console.log("2");
+            /*
+            // get access token
+            var ACCESS_TOKEN=response.authResponse.accessToken;
+            //console.log('ACCESS_TOKEN: '+ACCESS_TOKEN);
 
-            FB.api('/me', function(response) {
-                console.log(response);
-                user_email = response.email;
-                console.log(response.email);
-            });
+            // get user id
+            var userid=response.authResponse.userID;
+            console.log('userid: '+userid);
 
+            addNewUser(userid,ACCESS_TOKEN);
+            */
         }
-*/
-
     });
             
     FB.Event.subscribe('auth.logout', function(response) {
         if (response.status!="connected"){ // if logged out
-
-            // show login
             var IfLoggedInDiv=document.getElementById("if-logged-in");
             IfLoggedInDiv.style.display="none";
             var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
             IfNotLoggedInDiv.style.display="inline-block";
             FB.logout(function(response){
-                window.location.reload();  // refresh
+                location.reload();  // refresh
             });
         }
     });
 
     $("#login-btn").click(function(){   
-
         //alert("click on login-btn"); 
         FB.login(function(response) {
             //console.log(response);
             if (response.status == "connected") {
-
-                // show logout
                 var IfLoggedInDiv=document.getElementById("if-logged-in");
                 IfLoggedInDiv.style.display="inline-block";
                 var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
                 IfNotLoggedInDiv.style.display="none";
-
-                show_div=1;
                 
-                console.log(response);
-
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, {scope:'user_birthday,user_friends,user_photos,user_status,read_stream,export_stream'}); 
-      
-        window.location.reload();
+        }, {scope:'user_birthday,user_friends,user_photos,user_status,friends_status,friends_checkins,friends_photos,read_stream,export_stream'}); 
     });
 
     $("#logout-btn").click(function(){
-        console.log("click on logout-btn");
         //alert('You are logging out. Bye!');
+
+        console.log("click on logout-btn");
+
         Parse.User.logOut();
         console.log("parse log out");
-        
+
         FB.logout(function(response){
             location.reload();  // refresh
         });
-
-        /*
-        // show login
-        var IfLoggedInDiv=document.getElementById("if-logged-in");
-        IfLoggedInDiv.style.display="none";
-        var IfNotLoggedInDiv=document.getElementById("if-not-logged-in");
-        IfNotLoggedInDiv.style.display="inline-block";
-        */
-
-        show_div=0;
-        
-        //window.location.reload();
     });
 
 }; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<init end
@@ -276,15 +156,6 @@ window.fbAsyncInit = function () {//facebook init
     js.src = "//connect.facebook.net/en_US/sdk.js"; 
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-  
-
-
-
-
-
-
-
-//(function(){
 
 
     function addNewUser(userid, ACCESS_TOKEN){
@@ -358,7 +229,3 @@ window.fbAsyncInit = function () {//facebook init
 
         }
     };
-
-
-
-//})();

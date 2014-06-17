@@ -4,6 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="apply/bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+   <script src='https://www.parsecdn.com/js/parse-1.2.18.min.js'></script>
+   <script type="text/javascript">Parse.initialize("LQXW7t4hRmWf8Lw4dLcPaNRDQbMoe24rctZE7G0z", "qVd2E2OB786ORKQ83hWg6OQRs17YLIPf9H0MdUTP")</script>
    <script src="apply/bootstrap-3.0.0/assets/js/jquery.js"></script>
    <script src="apply/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -16,14 +18,14 @@
   <body>
     <div id="container">
       <!--form裡的action="URL" : where to send the form-data when a form is submitted-->
-      <form name="Form" action="" onsubmit="return validateForm()" method="post">
+      <form name="Form" onsubmit="return validateForm()">
         <div id="Title"> <!--連署標題-->
           <span class="glyphicon glyphicon-ok"></span>&nbsp;連署標題
           <input type="text" name="petition-title" id="petition-title">
         </div>
 
         <div id="Unit"> <!--發起單位-->
-          <span class="glyphicon glyphicon-ok"></span>&nbsp;發起單位
+          &nbsp;發起單位
           <input type="text" name="petition-unit" id="petition-unit">
         </div>
 
@@ -36,11 +38,9 @@
             <option value="environment-and-land">環保土地</option>
             <option value="livelihood">民生</option>
             <option value="labor">勞工</option>
-            <option value="others">其他</option>
           </select>
         </div>
 
-        <!--連署目標人數，連署照片上傳-->
         <div id="People"> <!--連署目標人數 target-->
           <span class="glyphicon glyphicon-ok"></span>&nbsp;目標人數
           <input type="text" name="petition-people" id="petition-people">
@@ -50,16 +50,6 @@
           <span class="glyphicon glyphicon-ok"></span>&nbsp;連署事件簡介
           <textarea name="petition-intro" id="petition-intro" rows="10" cols="50"></textarea>
         </div>
-
-        <!--div id="PeriodicTask"> <!--階段性目標>
-          &nbsp;&nbsp;&nbsp;階段性目標
-          <div class="P">
-            <div class="p">1. <input type="text" name="period-1" id="period-1" placeholder="達目標連署人數30%"></div>
-            <div class="p">2. <input type="text" name="period-2" id="period-2" placeholder="達目標連署人數50%"></div>
-            <div class="p">3. <input type="text" name="period-3" id="period-3" placeholder="達目標連署人數75%"></div>
-            <div class="p">4. <input type="text" name="period-4" id="period-4" placeholder="達目標連署人數100%"></div>
-          </div>
-        </div-->
 
         <div id="Content"> <!--聲明內容-->
           <span class="glyphicon glyphicon-ok"></span>&nbsp;聲明內容
@@ -81,7 +71,7 @@
         </div>
 
         <div id="Button" class="btn-group"> <!--建立的按鈕-->
-          <button class="btn" id="create_btn">建 立</button>
+          <button class="btn" id="create_btn" onClick="click_on_submit()">建 立</button>
         </div>
       </form>
     </div>
@@ -95,28 +85,86 @@
         var intro = document.forms["Form"]["petition-intro"].value;
         var txt = document.forms["Form"]["petition-text"].value;
         var people = document.forms["Form"]["petition-people"].value;
+        var timeline1 = document.forms["Form"]["timeline-1"].value;
+        var timeline2 = document.forms["Form"]["timeline-2"].value;
+        var timeline3 = document.forms["Form"]["timeline-3"].value;
+        var timeline4 = document.forms["Form"]["timeline-4"].value;
 
         if (title == null || title == "") {
           alert("請輸入連署標題");
           return false;
-        } else if (unit == null || unit == "") {
-          alert("請輸入發起單位");
-          return false;
+
         } else if (category == 'default') {
           alert("請選擇分類");
           return false;
+
         } else if (intro == null || intro == "") {
           alert("請輸入連署事件簡介");
           return false;
+
         } else if (txt == null || txt == "") {
           alert("請輸入聲明內容");
           return false;
+
         } else if (people == null || people == "") {
           alert("請輸入目標人數");
           return false;
         }
-        
+
+/*
+        function validateUser(){
+          var User = Parse.Object.extend("User");
+          var query = new Parse.Query(User);
+          var currentUser = Parse.User.current();
+          console.log(currentUser);
+
+          query.equalTo("username", "currentUser");
+          query.find({
+            success: function(results) {
+              alert("Successfully retrieved " + results.length + " scores.");
+              // Do something with the returned Parse.Object values
+              for (var i = 0; i < results.length; i++) { 
+                var object = results[i];
+                alert(object.id + ' - ' + object.get('playerName'));
+              }
+            },
+            error: function(error) {
+              alert("Error: " + error.code + " " + error.message);
+            }
+          });
+        }
+*/
+        var Petition = Parse.Object.extend("Petition");
+        var petition = new Petition();
+ 
+        petition.set("title", title);
+        petition.set("unit",unit);
+        petition.set("category",category);
+        petition.set("info",intro);
+        petition.set("content",txt);
+        petition.set("target",people);
+        petition.set("timeline1",timeline1);
+        petition.set("timeline2",timeline2);
+        petition.set("timeline3",timeline3);
+        petition.set("timeline4",timeline4);
+ 
+        petition.save(null, {
+          success: function(petition) {
+            // Execute any logic that should take place after the object is saved.
+            alert('New object created with objectId: ' + petition.id);
+          },
+          error: function(petition, error) {
+            // Execute any logic that should take place if the save fails.
+            // error is a Parse.Error with an error code and description.
+            alert('Failed to create new object, with error code: ' + error.description);
+          }
+        });
+
       };
+    </script>
+    <script>
+
+
     </script>
   </body>
  </html>
